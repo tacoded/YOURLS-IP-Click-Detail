@@ -1,3 +1,3 @@
 - Install and enable plugin and see IP Detail on 'Traffic statistics' page.
-- Limit returned clicks in code on line 21 if needed (LIMIT 1000)
+- Limit returned clicks in code on line 21 if needed (default limit is 1000 clicks) [LIMIT 1000]
 <img src="screenshot.gif">
