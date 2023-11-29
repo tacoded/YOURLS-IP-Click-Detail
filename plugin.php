@@ -8,9 +8,9 @@ Author: tacoded
 Author URI: https://github.com/tacoded
 */
 
-yourls_add_action( 'post_yourls_info_stats', 'ip_do_page' );
+yourls_add_action( 'post_yourls_info_stats', 'ip_detail_page' );
 
-function ip_do_page($shorturl) {
+function ip_detail_page($shorturl) {
         $nonce = yourls_create_nonce('ip');
         global $ydb;
         $base  = YOURLS_SITE;
@@ -33,5 +33,3 @@ function ip_do_page($shorturl) {
 			echo '<table width="850" border="1" cellpadding="5" style="margin-top:25px;"><tr><td width="80">Timestamp</td><td>ID</td><td>Country</td>
 				<td>IP Address</td><td>User Agent [Referrer]</td></tr>' . $outdata . "</table><br>\n\r"; }
 	}
-	
-	
