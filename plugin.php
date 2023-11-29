@@ -3,7 +3,7 @@
 Plugin Name: IP Click Detail
 Plugin URI: https://github.com/tacoded/YOURLS-IP-Click-Detail
 Description: Shows click level IP address detail and User Agent, Referrer
-Version: 1.1
+Version: 1.2
 Author: tacoded
 Author URI: https://github.com/tacoded
 */
@@ -18,7 +18,7 @@ function ip_detail_page($shorturl) {
         $table_log = YOURLS_DB_TABLE_LOG;
         $outdata         = '';
 
-        $query = $ydb->fetchObjects("SELECT * FROM `$table_log` WHERE shorturl='$shorturl[0]' ORDER BY click_id DESC");
+        $query = $ydb->fetchObjects("SELECT * FROM `$table_log` WHERE shorturl='$shorturl[0]' ORDER BY click_id DESC LIMIT 1000");
 
         if ($query) {
                 foreach( $query as $query_result ) {				
